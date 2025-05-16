@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../models/lesson_model.dart';
 import '../data/lesson_data.dart';
 
 class LessonScreen extends StatefulWidget {

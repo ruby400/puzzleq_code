@@ -2,7 +2,6 @@
 import 'dart:convert';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../models/lesson_model.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class LessonStorageService {
   static const String key = 'saved_lessons';

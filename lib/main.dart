@@ -7,8 +7,10 @@ import 'data/lesson_data.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await dotenv.load(fileName: ".env");
   await loadLessonsFromStorage(); // 저장된 문제 불러오기
-  await dotenv.load();
+  print('✅ loaded key: ${dotenv.env['API_KEY']}');
+
   runApp(const ProviderScope(child: MyApp()));
 }
 

@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import '../data/custom_concept_data.dart';
-import '../models/custom_concept_model.dart';
 import '../utils/gpt_service.dart';
 import '../models/lesson_model.dart';
 import 'package:uuid/uuid.dart';
@@ -38,8 +36,8 @@ class _CustomConceptScreenState extends State<CustomConceptScreen> {
       );
       lessonList.add(newLesson);
 
-      print('🟢 문제 생성됨: ${newLesson.title}, 레벨: ${newLesson.level}');
-      print('🟢 전체 문제 수: ${lessonList.length}');
+      debugPrint('🟢 문제 생성됨: ${newLesson.title}, 레벨: ${newLesson.level}');
+      debugPrint('🟢 전체 문제 수: ${lessonList.length}');
 
       setState(() {}); // 화면 갱신
       ScaffoldMessenger.of(

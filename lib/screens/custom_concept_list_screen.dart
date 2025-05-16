@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import '../data/lesson_data.dart';
-import '../screens/lesson_screen.dart';
 import 'solve_lesson_screen.dart';
 
 class CustomConceptListScreen extends StatelessWidget {

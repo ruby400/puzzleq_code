@@ -1,6 +1,5 @@
 // 📄 lib/screens/solve_lesson_screen.dart
 import 'package:flutter/material.dart';
-import '../models/lesson_model.dart';
 import '../data/lesson_data.dart';
 import 'lesson_screen.dart';
 import 'dart:math';

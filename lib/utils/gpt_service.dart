@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:http/http.dart' as http;
+import 'logger.dart';
 
 class GptService {
   static const url = 'https://api.openai.com/v1/chat/completions';
@@ -32,7 +33,7 @@ class GptService {
 학습 내용:
 $content
 ''';
-    final apiKey = dotenv.env['GPT_KEY']; // 🔐 GPT API 키 입력
+    final apiKey = dotenv.env['OPENAI_API_KEY']; // 🔐 GPT API 키 입력
     final headers = {
       'Content-Type': 'application/json',
       'Authorization': 'Bearer $apiKey',
@@ -52,7 +53,7 @@ $content
       body: body,
     );
 
-    print('🧠 GPT 응답 원문: ${response.body}');
+    logger.i('🧠 GPT 응답 원문: ${response.body}');
 
     if (response.statusCode == 200) {
       final data = json.decode(utf8.decode(response.bodyBytes));
@@ -66,10 +67,10 @@ $content
 
         return json.decode(jsonOnly);
       } catch (e) {
-        print('🚨 JSON 파싱 오류: $e');
+        logger.i('🚨 JSON 파싱 오류: $e');
       }
     } else {
-      print('❌ GPT 응답 오류: ${response.statusCode}');
+      logger.i('❌ GPT 응답 오류: ${response.statusCode}');
     }
 
     return null;
